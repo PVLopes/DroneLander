@@ -1,0 +1,7 @@
+ apps.dev.microsoft.com - Microsoft Application Registration Portal
+ 
+ ID da Aplicação
+e93bacfe-3062-482b-b32f-91546dd09263
+
+Segredos da Aplicação - Palavra-passe
+D8LJLkrEZ6Vtxm6tKQUfLJo
