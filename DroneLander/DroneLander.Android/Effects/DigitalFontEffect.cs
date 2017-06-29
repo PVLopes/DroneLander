@@ -10,8 +10,11 @@ using DroneLander.Droid;
 [assembly: ResolutionGroupName("Xamarin")]
 [assembly: ExportEffect(typeof(DroneLander.Droid.DigitalFontEffect), "FontEffect")]
 namespace DroneLander.Droid {
+
     public class DigitalFontEffect : PlatformEffect {
+
         TextView control;
+
         protected override void OnAttached() {
             try {
                 control = Control as TextView;
