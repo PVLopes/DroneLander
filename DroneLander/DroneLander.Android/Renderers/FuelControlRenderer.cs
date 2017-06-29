@@ -17,7 +17,9 @@ using DroneLander.Droid.Renderers;
 
 [assembly: ExportRenderer(typeof(Xamarin.Forms.ProgressBar), typeof(FuelControlRenderer))]
 namespace DroneLander.Droid.Renderers {
+
     public class FuelControlRenderer : ProgressBarRenderer {
+
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.ProgressBar> e) {
             base.OnElementChanged(e);
 

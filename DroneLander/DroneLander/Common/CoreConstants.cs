@@ -26,4 +26,9 @@ namespace DroneLander.Common
     public static class MobileServiceConstants {
         public const string AppUrl = "https://dronelandermobilentk.azurewebsites.net";
     }
+
+    public static class TelemetryConstants {
+        public const string DisplayName = "PLopes";
+        public const string Tagline = "easy peasy";
+    }
 }
