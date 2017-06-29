@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 
 namespace DroneLander {
+
     public partial class TelemetryManager {
+
         static TelemetryManager defaultInstance = new TelemetryManager();
         MobileServiceClient client;
 
         IMobileServiceTable<ActivityItem> activitiesTable;
 
-        private TelemetryManager() {
+        public TelemetryManager() {
             this.client = new MobileServiceClient(Common.MobileServiceConstants.AppUrl);
             this.activitiesTable = client.GetTable<ActivityItem>();
         }
