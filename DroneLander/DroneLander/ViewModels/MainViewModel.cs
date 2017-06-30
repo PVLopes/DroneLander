@@ -10,7 +10,9 @@ using Xamarin.Forms;
 using System.Collections.ObjectModel;
 
 namespace DroneLander {
+
     public class MainViewModel : Common.ObservableBase {
+
         public MainViewModel(MainPage activityPage) {
             this.ActivityPage = activityPage;
             this.ActiveLandingParameters = new LandingParameters();
@@ -162,6 +164,7 @@ namespace DroneLander {
                     });
 
                     if (this.FuelRemaining == 0.0) Helpers.AudioHelper.KillEngine();
+                    if (this.IsAuthenticated) Helpers.ActivityHelper.SendTelemetryAsync(this.UserId, this.Altitude, this.DescentRate, this.FuelRemaining, this.Thrust);
 
                     return this.IsActive;
                 }
@@ -180,6 +183,7 @@ namespace DroneLander {
                     LandingResultType landingResult = (this.ActiveLandingParameters.Velocity > -5.0) ? LandingResultType.Landed : LandingResultType.Kaboom;
 
                     if (this.IsAuthenticated) {
+                        Helpers.ActivityHelper.SendTelemetryAsync(this.UserId, this.Altitude, this.DescentRate, this.FuelRemaining, this.Thrust);
                         Helpers.ActivityHelper.AddActivityAsync(landingResult);
                     }
 
